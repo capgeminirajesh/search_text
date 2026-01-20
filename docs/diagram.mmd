@@ -1,0 +1,10 @@
+```mermaid
+flowchart LR
+    A[Google Drive] -->|Files + metadata| B[Drive Client]
+    B --> C[Document Indexer]
+    C -->|Content + metadata| D[(Elasticsearch)]
+    E[FastAPI Search API] -->|Queries| D
+    F[CLI/Postman] -->|/search| E
+    E -->|Results| F
+    C -->|Sync trigger| E
+```
